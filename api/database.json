@@ -9,7 +9,9 @@
         { "name": "Chess Baklava", "price": 5.30, "id": 9 },
         { "name": "Gyro Biscuits", "price": 8.95, "id": 10 },
         { "name": "Black Eye Pea Falafel", "price": 7.80, "id": 11 },
-        { "name": "Pecan Pastitsio", "price": 12.49, "id": 12 }
+        { "name": "Pecan Pastitsio", "price": 12.49, "id": 12 },
+        { "name": "No Entree", "price": 0.00, "id": 13 }
+        
     ],
     "vegetables": [
         { "id": 1, "type": "Okra", "price": 2.65 },
@@ -20,7 +22,9 @@
         { "id": 6, "type": "Sweet Potatoes", "price": 2.40 },
         { "id": 7, "type": "Grits", "price": 3.05 },
         { "id": 8, "type": "Fried Green Tomatoes", "price": 3.89 },
-        { "id": 9, "type": "Mac and Feta Cheese", "price": 2.55 }
+        { "id": 9, "type": "Mac and Feta Cheese", "price": 2.55 },
+        { "id": 10, "type": "No Veggie", "price": 0.00 }
+
     ],
     "sides": [
         { "id": 1, "title": "Chicken Fried Steak Poppers", "price": 5.45 },
@@ -28,7 +32,9 @@
         { "id": 3, "title": "Turkey Wings", "price": 4.80 },
         { "id": 4, "title": "BBQ Lamb Ribs", "price": 9.25 },
         { "id": 5, "title": "Catfish Nuggets", "price": 6.75 },
-        { "id": 6, "title": "Mini Souvlaki", "price": 5.20 }
+        { "id": 6, "title": "Mini Souvlaki", "price": 5.20 },
+        { "id": 7, "title": "No Side", "price": 0.00}
+
     ],
     "purchases": []
 }

@@ -1,13 +1,43 @@
-import { Sales } from "./Sales.js"
+import { Purchases } from "./Sales.js"
+import { choiceEntree } from "./Entrees.js"
+import { choiceVeggies } from "./Vegetables.js"
+import { choiceSides } from "./SideDishes.js"
+import { saveSelections } from "./Transient.js"
 
-export const FoodTruck = () => {
-    const salesHTML = Sales()
+const handleSelectionSubmission = (clickEvent) => {
+    if(clickEvent.target.id === "purchase") {
+        saveSelections();
+        console.log("Button Clicked")
+    }
+}
+
+export const purchaseComboButton = () => {
+    document.addEventListener("click", handleSelectionSubmission)
+}
+
+export const FoodTruck = async () => {
+    const entreesHTML = await choiceEntree()
+    const veggieHTML = await choiceVeggies()
+    const sidesHTML = await choiceSides()
+    const salesHTML = await Purchases()
 
     return `
         <header class="header">
             <img src="./images/hummus.png" class="logo" />
             <h1 class="title">Laura Kathryn's House of Hummus</h1>
         </header>
+
+        <article class="entrees">
+            ${entreesHTML}
+        </article>
+
+        <article class="veggies">
+            ${veggieHTML}
+        </article>
+
+        <article class="sides">
+            ${sidesHTML}
+        </article>
 
         <article>
             <button id="purchase">Purchase Combo</button>
