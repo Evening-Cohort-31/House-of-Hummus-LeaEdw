@@ -6,7 +6,7 @@
 // the relevant HTML
 
 export const choiceVeggies = async () => {
-    const response = await fetch();
+    const response = await fetch("http://localhost:8088/vegetables");
     const veggies = await response.json();
 
     // The event listener...
