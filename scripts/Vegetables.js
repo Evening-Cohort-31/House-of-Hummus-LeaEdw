@@ -3,7 +3,7 @@ import { setVeggie } from "./Transient.js";
 
 // Create a handler function to update with the users selection
 const handleVeggieChoice = (event) => {
-  if (event.target.name === "veggie") {
+  if (event.target.name === "vegetable") {
     let updatedVeggieOption = parseInt(event.target.value);
     setVeggie(updatedVeggieOption);
     console.log(updatedVeggieOption);
@@ -15,23 +15,23 @@ const handleVeggieChoice = (event) => {
 
 export const choiceVeggies = async () => {
   const response = await fetch("http://localhost:8088/vegetables");
-  const veggies = await response.json();
+  const vegetables = await response.json();
 
   // The event listener...
   document.addEventListener("change", handleVeggieChoice);
 
   // The HTML generator
-  let html = `<h2>Veggies</h2>`;
+  let html = `<h2>Vegetables</h2>`;
 
   // Map the array and generate the html for each item
-  const veggieHTML = veggies.map((veggie) => {
+  const veggieHTML = vegetables.map((vegetable) => {
     return `<div>
                     <input
                         type="radio"
-                        name="veggie"
-                        value="${veggie.id}"
-                        data-price="${veggie.price}"/>
-                            ${veggie.type} 
+                        name="vegetable"
+                        value="${vegetable.id}"
+                        data-price="${vegetable.price}"/>
+                            ${vegetable.type} 
                 </div>`;
   });
   // Below use join and then close the html for the radio options

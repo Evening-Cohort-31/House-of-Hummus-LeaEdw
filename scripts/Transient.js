@@ -25,18 +25,16 @@ export const setSide = (sideSelection) => {
 
 export const saveSelections = async () => {
     // Get the current transient state... 
-
     const customerSelections = {...transientState}
 
     // Validate before sending
-
     if(
         customerSelections.entreeId === 0 ||
         customerSelections.veggieId === 0 ||
         customerSelections.sideId === 0 
     ) {
         window.alert("Please complete all selections before submitting");
-        return
+        return;
     }
 
     const postSelections = {

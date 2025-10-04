@@ -14,18 +14,18 @@ const handleSideChoice = (event) => {
 // Create the choice function that receives and uses the data from the database and generates
 // the relevant HTML
 
-export const choiceSides = async () => {
+export const choiceSideDish = async () => {
     const response = await fetch("http://localhost:8088/sides");
-    const sides = await response.json();
+    const sideDish = await response.json();
 
     // The event listener...
     document.addEventListener("change", handleSideChoice)
 
     // The HTML generator
-    let html = `<h2>Sides</h2>`
+    let html = `<h2>Side Dishes</h2>`
 
     // Map the array and generate the html for each item
-    const sidesHTML = sides.map((side) => {
+    const sideDishHTML = sideDish.map((side) => {
         return `
                 <div>
                     <input 
@@ -38,6 +38,6 @@ export const choiceSides = async () => {
         `
     })
     // Below use join and then close the html for the radio options
-    html += sidesHTML.join("");
+    html += sideDishHTML.join("");
     return html;
 }

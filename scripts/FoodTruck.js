@@ -1,24 +1,16 @@
 import { Purchases } from "./Sales.js"
 import { choiceEntree } from "./Entrees.js"
 import { choiceVeggies } from "./Vegetables.js"
-import { choiceSides } from "./SideDishes.js"
+import { choiceSideDish } from "./SideDishes.js"
 import { saveSelections } from "./Transient.js"
+import { Purchases, generatePurchaseHTML} from "./Sale.js"
 
-const handleSelectionSubmission = (clickEvent) => {
-    if(clickEvent.target.id === "purchase") {
-        saveSelections();
-        console.log("Button Clicked")
-    }
-}
 
-export const purchaseComboButton = () => {
-    document.addEventListener("click", handleSelectionSubmission)
-}
 
 export const FoodTruck = async () => {
     const entreesHTML = await choiceEntree()
     const veggieHTML = await choiceVeggies()
-    const sidesHTML = await choiceSides()
+    const sidesHTML = await choiceSideDish()
     const salesHTML = await Purchases()
 
     return `
