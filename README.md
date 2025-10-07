@@ -56,13 +56,19 @@ sequenceDiagram
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Should transient state be represented in a database diagram? Why, or why not?
-   > From what I know, it should be included in a database diagram based on the fact that it interacts with mutiple modules and even handles changes that will be reflected in the database.
+   > From what I know, it should be included in a database diagram based on the fact that it interacts with multiple modules and even handles changes that will be reflected in the database.
+
+   After running my responses through Gemini -
+
+   Only persistent data should be shown in a database diagram, so the transient state should not be included. I liked my response and logic, but will concede to the common use.  
 
 2. In the **FoodTruck** module, you are **await**ing the invocation of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
-   > Because this module is using data that will need to be pulled from an api- it is necessary to use async/await so that the request can be made without any issues while the application waits to receive the information from the server.
+   > Because this module is using data that will need to be pulled from an api- it is necessary to use async/await so that the request can be made without any issues while the application waits to receive the information from the server. Without including await, the page will display [object promise] in placed of the requested data.
 
 3. When the user is making choices by selecting radio buttons, explain how that data is retained so that the **Purchase Combo** button works correctly.
-   > The choice(...) function in Entree.js, SideDishes.js, and Veggies.js makes it so the document is "listening" for a change in the selection (initially away from zero, but also and subsequent change from the original selection). It initiates an the handle function when a selection is made that makes it so the value of the transient state is the same as the user selection. It is not saved to the database until it runs the saveSelections() function which adds the updated transient state to the database. 
+   > The choice(...) function in Entree.js, SideDishes.js, and Veggies.js makes it so the document is "listening" for a change in the selection (initially away from zero, but also and subsequent change from the original selection). It initiates the handle function when a selection is made that makes it so the value of the transient state is the same as the user selection. It is not saved to the database until it runs the saveSelections() function which adds the updated transient state to the database. 
 
 4. You used the `map()` array method in the self assessment _(at least, you should have since it is a learning objective)_. Explain why that function is helpful as a replacement for a `for..of` loop.
    > In this project, we didn't want to change the original values while accessing each component of the targeted array - by using .map() we are able to create something new with the array without worrying about altering the original array. 
+
+The rest of my questions were only screen for typos and the only thing from gemini was the added text below the disclaimer.
