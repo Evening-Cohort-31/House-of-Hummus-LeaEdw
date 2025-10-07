@@ -14,8 +14,8 @@ const handleVeggieChoice = (event) => {
 // the relevant HTML
 
 export const choiceVeggies = async () => {
-  const response = await fetch("http://localhost:8088/vegetables");
-  const vegetables = await response.json();
+  const response = await fetch("http://localhost:8088/veggies");
+  const veggies= await response.json();
 
   // The event listener...
   document.addEventListener("change", handleVeggieChoice);
@@ -24,14 +24,15 @@ export const choiceVeggies = async () => {
   let html = `<h2>Vegetables</h2>`;
 
   // Map the array and generate the html for each item
-  const veggieHTML = vegetables.map((vegetable) => {
+  const veggieHTML = veggies.map((veggie) => {
     return `<div>
                     <input
                         type="radio"
+                        class="choices"
                         name="vegetable"
-                        value="${vegetable.id}"
-                        data-price="${vegetable.price}"/>
-                            ${vegetable.type} 
+                        value="${veggie.id}"
+                        data-price="${veggie.price}"/>
+                            ${veggie.type} 
                 </div>`;
   });
   // Below use join and then close the html for the radio options

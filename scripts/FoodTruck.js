@@ -1,44 +1,35 @@
-import { Purchases } from "./Sales.js"
-import { choiceEntree } from "./Entrees.js"
-import { choiceVeggies } from "./Vegetables.js"
-import { choiceSideDish } from "./SideDishes.js"
-import { saveSelections } from "./Transient.js"
-import { Purchases, generatePurchaseHTML} from "./Sale.js"
-
-
+import { choiceEntree } from "./Entrees.js";
+import { choiceVeggies } from "./Vegetables.js";
+import { choiceSideDish } from "./SideDishes.js";
+import { Purchases, PurchaseButton, generatePurchaseHTML } from "./Checkout.js";
 
 export const FoodTruck = async () => {
-    const entreesHTML = await choiceEntree()
-    const veggieHTML = await choiceVeggies()
-    const sidesHTML = await choiceSideDish()
-    const salesHTML = await Purchases()
+  const entreesHTML = await choiceEntree();
+  const veggieHTML = await choiceVeggies();
+  const sidesHTML = await choiceSideDish();
+  const purchases = await Purchases();
+  const salesHTML = generatePurchaseHTML(purchases);
+  const purchaseButton = PurchaseButton();
 
-    return `
+  return `
         <header class="header">
             <img src="./images/hummus.png" class="logo" />
             <h1 class="title">Laura Kathryn's House of Hummus</h1>
         </header>
 
-        <article class="entrees">
-            ${entreesHTML}
-        </article>
+        <section class="articles-container">
+            <article class="entree options">${entreesHTML}</article>
+            <article class="veggie options">${veggieHTML}</article>
+            <article class="side options">${sidesHTML}</article>
+        </section>
+        
+        <article class="button">${purchaseButton}</article>
 
-        <article class="veggies">
-            ${veggieHTML}
-        </article>
+        <aside class="ticket-title">
+            <h2>Ticket List</h2>
+            <div class="customerOrders">${salesHTML}
+</div>
+        </aside>
 
-        <article class="sides">
-            ${sidesHTML}
-        </article>
-
-        <article>
-            <button id="purchase">Purchase Combo</button>
-        </article>
-
-        <article class="customerOrders">
-            <h2>Monthly Sales</h2>
-            ${salesHTML}
-        </article>
-
-    `
-}
+    `;
+};
