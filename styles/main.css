@@ -15,12 +15,13 @@ textarea {
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(228, 226, 226);
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+  
 }
 
 ul {
@@ -28,16 +29,12 @@ ul {
     padding-inline-start: 0.75rem;
 }
 
-#purchase {
-    margin: 1rem 0 2rem 2rem;
-    padding: 0.5rem;
-    background-color: rgb(111, 72, 227);
-    color: rgb(230, 220, 255);
-    font-size: 1rem;
-}
 
 .header {
     display: flex;
+    justify-content:  center;
+    margin: 2rem;
+
 }
 
 .logo {

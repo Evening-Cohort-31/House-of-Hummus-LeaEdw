@@ -1,19 +1,72 @@
+.articles-container {
+  display: grid; /* 1. Enable Grid */
+  /* 2. Key step: Define 3 columns, each 1 fractional unit (1fr) wide */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px; /* Optional: Adds space between the columns */
+}
+
 .choices {
-    display: flex;
-    justify-content: space-evenly;
+  margin: 10px;
 }
 
 .options {
-    flex-basis: 24%;
-    margin: 0 2rem;
-    border: 1px dashed dodgerblue;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+  /* flex-basis: 24%; */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+  background-color: azure;
 }
 
-.customOrders {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+.button {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 2rem 2rem;
 }
 
+#purchase-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background-color: rgb(111, 72, 227);
+  color: rgb(230, 220, 255);
+  font-size: 1rem;
+}
+
+aside {
+  padding: 20px;
+}
+.customerOrders {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.purchase {
+  background-color: azure;
+  gap: 20px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+}
+
+.receipt-items {
+  display: grid;
+  /* Define two columns: one for the item name (auto width), 
+     one for the price (aligned to the right) */
+  grid-template-columns: auto min-content;
+  gap: 5px 15px; /* Adds a small gap between rows (5px) and columns (15px) */
+}
+
+/* Ensure the prices are text-aligned to the right for a clean receipt look */
+.receipt-items .price {
+  text-align: right;
+  font-weight: bold; /* Optional: Makes prices stand out */
+}
+
+/* Make the Total stand out more */
+.receipt-items .purchase-total {
+  font-weight: bold;
+  border-top: 1px dashed #333; /* Optional: Separator line */
+  padding-top: 5px;
+}

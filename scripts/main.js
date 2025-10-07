@@ -1,10 +1,15 @@
-import { FoodTruck } from "./FoodTruck.js"
+import { FoodTruck } from "./FoodTruck.js";
 
-const mainContainer = document.querySelector("#container")
+const mainContainer = document.querySelector("#container");
 
 const renderAllHTML = async () => {
-    mainContainer.innerHTML = await FoodTruck()
-}
+  mainContainer.innerHTML = await FoodTruck();
+};
 
-renderAllHTML()
+document.addEventListener("stateChanged", (event) => {
+  console.log("State of the data has changed... regenerating HTML.");
+  renderAllHTML();
+});
 
+
+  renderAllHTML();

@@ -25,7 +25,7 @@ export const setSide = (sideSelection) => {
 
 export const saveSelections = async () => {
     // Get the current transient state... 
-    const customerSelections = {...transientState}
+    const customerSelections = { ...transientState } 
 
     // Validate before sending
     if(
@@ -40,10 +40,10 @@ export const saveSelections = async () => {
     const postSelections = {
         method: "POST",
         headers: {
-            "Content-Type": "application.json"
+            "Content-Type": "application/json"
         },
 
-        body: JSON.stringify(customerSelections)
+        body: JSON.stringify(customerSelections),
     };
 
     // Send the data to the API

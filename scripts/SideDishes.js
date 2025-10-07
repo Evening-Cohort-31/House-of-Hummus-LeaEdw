@@ -30,6 +30,7 @@ export const choiceSideDish = async () => {
                 <div>
                     <input 
                         type="radio"
+                        class="choices"
                         name="side"
                         value="${side.id}
                         data-price="${side.price}"/>

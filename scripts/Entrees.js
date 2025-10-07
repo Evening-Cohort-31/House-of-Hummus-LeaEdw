@@ -28,6 +28,7 @@ export const choiceEntree = async () => {
         return `<div>
                     <input 
                         type="radio"
+                        class="choices"
                         name="entree"
                         value="${entree.id}"
                         data-price="${entree.price}"/>
